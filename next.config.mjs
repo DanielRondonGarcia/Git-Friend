@@ -5,6 +5,7 @@ try {
   // ignore error
 }
 
+// Internationalization is managed by next-intl middleware (see middleware.ts)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
