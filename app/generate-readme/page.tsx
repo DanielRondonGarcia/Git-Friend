@@ -1,8 +1,5 @@
 "use client"
 
-import { ProtectedRoute } from "@/components/auth/protected-route"
-import { UserAuthButton } from "@/components/auth/user-auth-button"
-
 import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
@@ -335,7 +332,6 @@ export default function GenerateReadme() {
   }
 
   return (
-    <ProtectedRoute>
       <div className="flex min-h-screen flex-col bg-[hsl(var(--readme-bg))] text-[hsl(var(--readme-text))]">
         <header className="sticky top-0 z-40 border-b border-[hsl(var(--readme-border))] bg-[hsl(var(--readme-bg))/80] backdrop-blur supports-[backdrop-filter]:bg-[hsl(var(--readme-bg))/60]">
           <div className="container flex h-16 items-center justify-between">
@@ -384,7 +380,6 @@ export default function GenerateReadme() {
                 <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               </Button>
-              <UserAuthButton />
             </div>
           </div>
         </header>
@@ -912,6 +907,5 @@ export default function GenerateReadme() {
           </AnimatePresence>
         </main>
       </div>
-    </ProtectedRoute>
   )
 }

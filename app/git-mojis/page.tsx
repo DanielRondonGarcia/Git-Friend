@@ -1,7 +1,5 @@
 "use client"
 
-import { ProtectedRoute } from "@/components/auth/protected-route"
-import { UserAuthButton } from "@/components/auth/user-auth-button"
 import { Navbar } from "@/components/ui/navbar"
 
 // Import the existing component code
@@ -80,7 +78,6 @@ export default function GitMojis() {
   }
 
   return (
-    <ProtectedRoute>
       <div className="flex min-h-screen flex-col">
         <Navbar />
         
@@ -224,6 +221,5 @@ export default function GitMojis() {
           </div>
         </main>
       </div>
-    </ProtectedRoute>
   )
 }

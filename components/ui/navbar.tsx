@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { UserAuthButton } from "@/components/auth/user-auth-button"
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
@@ -85,7 +84,6 @@ export function Navbar() {
 
         <div className={`flex items-center z-10 ${visible ? "gap-1" : "gap-4"}`}>
           <ThemeToggle />
-          <UserAuthButton />
         </div>
       </motion.div>
 
@@ -143,7 +141,6 @@ export function Navbar() {
             ))}
             <div className="pt-2 flex items-center gap-2">
               <ThemeToggle />
-              <UserAuthButton />
             </div>
           </motion.div>
         )}
