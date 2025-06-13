@@ -27,7 +27,6 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 import { SuggestionCard } from "@/components/ui/suggestion-card"
 import Image from "next/image"
-import { ProtectedRoute } from "@/components/auth/protected-route"
 import { Navbar } from "@/components/ui/navbar"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Card, CardContent } from "@/components/ui/card"
@@ -279,7 +278,6 @@ export default function AIChat() {
   }
 
   return (
-    <ProtectedRoute>
       <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-300">
         <Navbar />
 
@@ -678,7 +676,6 @@ export default function AIChat() {
           </div>
         </main>
       </div>
-    </ProtectedRoute>
   )
 }
 
