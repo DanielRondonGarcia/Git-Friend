@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
@@ -20,7 +19,6 @@ export function Navbar() {
     target: ref,
     offset: ["start start", "end start"],
   })
-  const t = useTranslations("navbar");
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 100) {
@@ -31,10 +29,10 @@ export function Navbar() {
   })
 
   const routes = [
-    { name: t("home"), path: "/" },
-    { name: t("chat"), path: "/ai-chat" },
-    { name: t("readme"), path: "/generate-readme" },
-    { name: t("gitmoji"), path: "/git-mojis" },
+    { name: "Home", path: "/" },
+    { name: "Chat", path: "/ai-chat" },
+    { name: "Readme", path: "/generate-readme" },
+    { name: "Gitmoji", path: "/git-mojis" },
   ]
 
   return (
