@@ -5,8 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,19 +22,14 @@ export default async function RootLayout({
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
               <Suspense>{children}</Suspense>
               <Toaster />
             </ThemeProvider>
-        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>
